@@ -26,10 +26,7 @@
 
 <body>
   <div class="reveal">
-    <audio id="music">
-      Your browser does not support.
-      <source src="./llj.mp3" type="audio/mpeg">
-    </audio>
+    <audio id="music" type="audio/mpeg" src="./llj.mp3" autoplay preload loop="loop"></audio>
     <div class="slides">
       <section data-background-image="./img/1.jpg" data-background-size="contain" data-background-color="#fff">
       </section>
@@ -50,18 +47,18 @@
 
   <script>
     // Audio 自动播放
-    function toggleSound() {
-      var music = document.getElementById("music");//获取ID  
-      console.log(music);
-      console.log(music.paused);
-      if (music.paused) { //判读是否播放  
-        music.paused = false;
-        music.play(); //没有就播放 
-      }
+    // function toggleSound() {
+    //   var music = document.getElementById("music");//获取ID  
+    //   console.log(music);
+    //   console.log(music.paused);
+    //   if (music.paused) { //判读是否播放  
+    //     music.paused = false;
+    //     music.play(); //没有就播放 
+    //   }
 
-    }
+    // }
 
-    setInterval("toggleSound()", 1000);
+    // setInterval("toggleSound()", 1000);
     // More info about config & dependencies:
     // - https://github.com/hakimel/reveal.js#configuration
     // - https://github.com/hakimel/reveal.js#dependencies
@@ -75,34 +72,7 @@
         { src: 'plugin/highlight/highlight.js', async: true }
       ]
     });
-
-    document.addEventListener("WeixinJSBridgeReady", function () {
-      //微信
-      var audio = document.getElementById("music");
-      audio.play();//音频播放
-    }, false);
   </script>
-
-  <!-- <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> -->
-
-  <!-- <script src="./js/jweixin-1.0.0.js"></script> 
-  <script>
-    function autoPlayVideo() {
-      wx.config({
-        debug: false,
-        appId: "",
-        timestamp: 1,
-        nonceStr: "",
-        signature: "",
-        jsApiList: []
-      });
-      wx.ready(function () {
-        var autoplayVideo = document.getElementById("music");
-        autoplayVideo.play()
-      })
-    };
-    autoPlayVideo();
-  </script> -->
 </body>
 
 </html>
